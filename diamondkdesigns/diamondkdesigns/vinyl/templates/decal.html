@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Decals - Diamond K Designs{% endblock %}
+
+{% block content %}
+  <h2>Explore our Decal Designs</h2>
+
+  <!-- Display decal designs -->
+  {% if decal_designs %}
+    <ul>
+      {% for design in decal_designs %}
+        <li>
+          <h4>{{ design.title }}</h4>
+          <p>{{ design.description }}</p>
+          <img src="{{ design.design_image.url }}" alt="{{ design.title }}">
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No decal designs available.</p>
+  {% endif %}
+{% endblock %}
