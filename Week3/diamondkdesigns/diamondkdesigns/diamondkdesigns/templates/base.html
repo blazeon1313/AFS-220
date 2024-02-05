@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Diamond K Designs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Diamond K Designs</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a>Decal</a></li>
+            <li><a>Web Design</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Login</a></li>
+            <li><a>Register</a></li>
+        </ul>
+    </nav>
+    {% if user.is_authenticated %}
+  <!-- Display username or other authenticated content -->
+        Welcome, {{ user.username }}!        
+    {% endif %}
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2024 Diamond K Designs. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
