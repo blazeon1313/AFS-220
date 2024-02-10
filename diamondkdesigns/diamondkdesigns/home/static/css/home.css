@@ -12,7 +12,15 @@ img {
     width: 100px;
 }
 
-img:hover {
-    height: 200px;
-    width: 200px;
+img:click {
+    height: 300px;
+    width: 400px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    list-style-type: none;
 }

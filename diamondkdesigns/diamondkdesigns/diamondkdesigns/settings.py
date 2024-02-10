@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'vinyl',
     'web_design',
     'contact',
+    'apparel',
 ]
 
 MIDDLEWARE = [

@@ -27,6 +27,7 @@ urlpatterns = [
     path('decal/', include('vinyl.urls')),
     path('web_design/', include('web_design.urls')),
     path('contact/', include('contact.urls')),
+    path('clothing/', include('apparel.urls')),
 ]
 
 if settings.DEBUG:

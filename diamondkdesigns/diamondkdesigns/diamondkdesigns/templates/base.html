@@ -10,17 +10,19 @@
 <body>
 
 <header>
+    <img class="diamond" src="{% static 'images/diamondk.jpg' %}" alt="DiamondK">
     <h1>Diamond K Designs</h1>
     <nav>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'decal' %}">Decal</a></li>
+            <li><a href="{% url 'clothing' %}">Clothing</a></li>
             <li><a href="{% url 'web_design' %}">Web Design</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
             <li><a href="{% url 'login' %}">Login</a></li>
             <li><a href="{% url 'register' %}">Register</a></li>
         </ul>
-    </nav>
+    </nav></br>
     {% if user.is_authenticated %}
   <!-- Display username or other authenticated content -->
         Welcome, {{ user.username }}!        
