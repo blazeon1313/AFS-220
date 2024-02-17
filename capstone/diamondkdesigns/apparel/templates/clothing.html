@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Decals - Diamond K Designs{% endblock %}
+
+{% block content %}
+{% load static %}
+  <h2>Explore our Clothing Designs</h2>
+
+  <!-- Display decal designs -->
+  {% if clothing_designs %}
+    <ul>
+      {% for design in clothing_designs %}
+        <li>
+          <h4>{{ design.title }}</h4>
+          <p>{{ design.description }}</p>
+          <img src="{{ design.design_image.url }}" alt="{{ design.title }}">
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No clothing designs available.</p>
+  {% endif %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/apparel.css' %}">
+
+{% endblock %}

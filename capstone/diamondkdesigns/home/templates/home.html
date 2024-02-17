@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>Welcome to Diamond K Designs!</h2>
+
+  <!-- Display featured items -->
+  {% if featured_items %}
+    <ul><h3>Featured Items</h3>
+      {% for item in featured_items %}
+        <li>
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+          <img src="{% static 'featured_items/' %}{{ item.image }}" alt="{{ item.title }}">
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p></p>
+  {% endif %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
