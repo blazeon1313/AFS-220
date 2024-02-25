@@ -5,10 +5,11 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from .models import UserProfile
 
-# Create your views here.
+# Custom login view
 class CustomLoginView(LoginView):
     template_name = 'registration/login.html'  
 
+# Sign up view
 class SignUpView(CreateView):
     form_class = UserCreationForm
     template_name = 'registration/registration.html'  
@@ -16,8 +17,10 @@ class SignUpView(CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        UserProfile.objects.create(user=self.object)
+        # Create a UserProfile associated with the new user
+        UserProfile.objects.create(user=form.instance)
         return response
 
-    def profile(request):
-        return render(request, 'profile.html')
+# Profile view
+def profile(request):
+    return render(request, 'profile.html')
