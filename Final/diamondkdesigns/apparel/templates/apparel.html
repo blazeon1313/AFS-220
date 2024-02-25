@@ -1,0 +1,28 @@
+<!--apparel html-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Apparel - Diamond K Designs{% endblock %}
+
+{% block content %}
+  <h2>Examples of Custom shirts</h2>
+  <h3>All apparel is done custom</h3>
+
+  <div class="apparel-grid">
+    <!-- Display apparel designs -->
+    {% if apparel_designs %}
+        {% for design in apparel_designs %}
+          <div class="apparel-item">
+            <h4>{{ design.title }}</h4>
+            <p>{{ design.description }}</p>
+            <img src="{{ design.image.url }}" alt="{{ design.title }}">
+          </div>
+        {% endfor %}
+    {% endif %}
+  </div>
+
+
+  </br>
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/apparel.css' %}">
+{% endblock %}

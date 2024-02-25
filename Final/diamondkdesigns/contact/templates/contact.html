@@ -1,0 +1,20 @@
+<!--contact html-->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact Us - Diamond K Designs{% endblock %}
+
+{% block content %}
+  <h2>Contact Us</h2>
+
+  <!-- Contact form -->
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+  
+  <p>Feel free to reach out to us for any inquiries or collaborations!</p>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+
+{% endblock %}

@@ -1,0 +1,23 @@
+<!--profile html-->
+{% load static %}
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+  <h2>Your Profile</h2>
+  <div>
+    <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+    <p><strong>Username:</strong> {{ user_profile.user.username }}</p>
+    <p><strong>Bio:</strong> {{ user_profile.bio }}</p>
+    <p><strong>Phone Number:</strong> {{ user_profile.phone_number }}</p>
+  </div>
+  <hr>
+  <h3>Edit Profile</h3>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+  </form>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+
+{% endblock %}

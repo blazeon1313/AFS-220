@@ -1,0 +1,13 @@
+<!--registration html-->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <h2>Create Account</h2>
+  <form method="post" class="register_form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Account</button>
+  </form></br>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/registration.css' %}">
+
+{% endblock %}

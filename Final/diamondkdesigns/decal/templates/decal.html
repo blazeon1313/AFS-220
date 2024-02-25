@@ -1,0 +1,43 @@
+<!--decal html-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Decals - Diamond K Designs{% endblock %}
+
+{% block content %}
+  <h2>Explore our Decal Designs</h2>
+  <h3>Please contact us for custom designs</h3>
+
+  <div class="decal-grid">
+    <!-- Display decal designs -->
+    {% if decal_designs %}
+        {% for design in decal_designs %}
+          <div class="decal-item">
+            <h4>{{ design.title }}</h4>
+            <p>{{ design.description }}</p>
+            <img src="{{ design.image.url }}" alt="{{ design.title }}"></br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1"></br>
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+              <option value="4 X 4">4 X 4</option>
+              <option value="5 X 5">5 X 5</option>
+              <option value="6 X 6">6 X 6</option>
+              <option value="7 X 7">7 X 7</option>
+              <option value="8 X 8">8 X 8</option>
+              <option value="9 X 9">9 X 9</option>
+              <option value="10 X 10">10 X 10</option>
+              <option value="11 X 11">11 X 11</option>
+            </select></br>
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" value="{{ 10 }}" readonly>
+          </div>
+        {% endfor %}
+    {% endif %}
+  </div>
+
+
+  </br>
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/decal.css' %}">
+{% endblock %}
