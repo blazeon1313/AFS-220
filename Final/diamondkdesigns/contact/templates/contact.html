@@ -5,13 +5,20 @@
 
 {% block content %}
   <h2>Contact Us</h2>
-
-  <!-- Contact form -->
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-  </form>
+  <div>
+    <h3>Address: </h3>
+    <p>
+      This is my company address
+    </p>
+    <h3>Phone: </h3>
+    <p>
+      1 (123) 456 - 7890
+    </p>
+    <h3>Email: </h3>
+    <p>
+      diamondkdesigns@example.com
+    </p>
+  </div>
   
   <p>Feel free to reach out to us for any inquiries or collaborations!</p>
 
